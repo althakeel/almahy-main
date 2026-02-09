@@ -1,4 +1,5 @@
 import { translations, Locale } from "@/lib/translations";
+import Link from "next/link";
 
 export default async function ServicesPage({
   params,
@@ -89,9 +90,14 @@ export default async function ServicesPage({
           <p className="text-gray-800 mb-8 text-lg">
             {t.servicesCTADesc}
           </p>
-          <button className="bg-gray-900 hover:bg-gray-800 text-white font-bold px-8 py-4 rounded-full text-lg transition-colors shadow-lg">
+          <Link 
+            href="https://wa.me/97142648831?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-gray-900 hover:bg-gray-800 text-white font-bold px-8 py-4 rounded-full text-lg transition-colors shadow-lg"
+          >
             {t.contactButton}
-          </button>
+          </Link>
         </div>
       </div>
     </div>

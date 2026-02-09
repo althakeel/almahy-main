@@ -51,10 +51,15 @@ export default function Navbar({ locale }: NavbarProps) {
 
           {/* Right: Button and Language Switcher */}
           <div className="flex items-center gap-2 md:gap-4">
-            <button className="bg-amber-400 hover:bg-amber-500 text-gray-900 font-bold px-5 md:px-7 py-2.5 md:py-3 rounded-full text-xs md:text-sm transition-colors flex items-center gap-2 whitespace-nowrap shadow-lg hover:shadow-xl">
+            <Link 
+              href="https://wa.me/97142648831?text=Hello%2C%20I%20would%20like%20to%20get%20a%20consultation%20for%20accounting%20services"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-amber-400 hover:bg-amber-500 text-gray-900 font-bold px-5 md:px-7 py-2.5 md:py-3 rounded-full text-xs md:text-sm transition-colors flex items-center gap-2 whitespace-nowrap shadow-lg hover:shadow-xl"
+            >
               GET A CONSULTATION
               <span>👤</span>
-            </button>
+            </Link>
 
             {/* Mobile Menu Button */}
             <button

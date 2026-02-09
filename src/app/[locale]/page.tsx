@@ -49,12 +49,22 @@ export default async function Home({
 
             {/* Call to Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="bg-gray-700/80 hover:bg-gray-700 text-white font-semibold py-3 px-8 rounded transition-colors backdrop-blur-sm border border-gray-600">
+              <Link 
+                href="https://wa.me/97142648831?text=Hello%2C%20I%20would%20like%20to%20contact%20you%20for%20accounting%20services"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-700/80 hover:bg-gray-700 text-white font-semibold py-3 px-8 rounded transition-colors backdrop-blur-sm border border-gray-600"
+              >
                 {t.contactButton}
-              </button>
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-3 px-8 rounded transition-colors">
+              </Link>
+              <Link
+                href="https://wa.me/97142648831?text=Hello%2C%20I%20would%20like%20to%20book%20a%20free%20consultation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-3 px-8 rounded transition-colors"
+              >
                 {t.bookConsultation}
-              </button>
+              </Link>
             </div>
           </div>
         </div>

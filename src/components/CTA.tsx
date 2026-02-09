@@ -72,24 +72,28 @@ export default function CTA({ locale = 'en' }: CTAProps) {
 
               {/* Phone Number */}
               <Link
-                href="tel:+971504096028"
+                href="https://wa.me/97142648831?text=Hello%2C%20I%20would%20like%20to%20get%20accounting%20services"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block text-center mb-4 hover:opacity-90 transition-opacity"
               >
                 <span className="text-3xl md:text-4xl font-bold text-white block tracking-tight">
-                  +971 504 096 028
+                  +971 4264 8831
                 </span>
               </Link>
 
               {/* Call to Action */}
               <div className="text-center">
                 <p className="text-sm font-semibold tracking-widest uppercase text-white/90 mb-4">
-                  Feel Free to Call Us
+                  Contact Us on WhatsApp
                 </p>
                 <Link
-                  href="tel:+971504096028"
+                  href="https://wa.me/97142648831?text=Hello%2C%20I%20would%20like%20to%20get%20accounting%20services"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-6 py-3 bg-white/20 hover:bg-white/30 rounded-lg transition-all duration-200 backdrop-blur-sm border border-white/30"
                 >
-                  <span className="text-sm font-semibold text-white">Call Now</span>
+                  <span className="text-sm font-semibold text-white">Chat on WhatsApp</span>
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
