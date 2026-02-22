@@ -19,6 +19,7 @@ export default function Navbar({ locale }: NavbarProps) {
   const pathname = usePathname();
   const router = useRouter();
   const isEnServicesPage = pathname === '/en/services';
+  const isTurkiyePage = pathname?.includes('/second-passport/turkiye');
   const isValidLoc = locale === 'en' || locale === 'ar';
   const lang = isValidLoc ? (locale as Locale) : 'en';
   const t = translations[lang];
@@ -55,7 +56,7 @@ export default function Navbar({ locale }: NavbarProps) {
 
   return (
     <nav className={`fixed top-0 z-50 flex justify-center w-full transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-      <div className={`${isEnServicesPage ? 'bg-gray-900/55' : isScrolled ? 'bg-gray-900/25' : 'bg-transparent'} backdrop-blur-3xl shadow-lg text-white w-full max-w-[1250px] px-4 md:px-8 transition-all duration-300`} style={{borderRadius: '0 0 15px 15px'}}>
+      <div className={`${isTurkiyePage ? 'bg-gray-900' : isEnServicesPage ? 'bg-gray-900/55' : isScrolled ? 'bg-gray-900/25' : 'bg-transparent'} backdrop-blur-3xl shadow-lg text-white w-full max-w-[1250px] px-4 md:px-8 transition-all duration-300`} style={{borderRadius: '0 0 15px 15px'}}>
         <div className="flex items-center justify-between py-2 md:py-2.5">
           {/* Left: Logo and Company Name */}
           <Link href={`/${lang}`} className="flex items-center gap-2 md:gap-3 cursor-pointer">
