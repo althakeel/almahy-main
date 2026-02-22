@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gulf Star for Accounting",
+  title: "Almahy Legal Service",
   description: "Professional accounting services",
 };
 
@@ -33,18 +33,12 @@ export default async function LocaleLayout({
 }>) {
   const { locale } = await params;
   const isValidLoc = isValidLocale(locale);
-  const direction = isValidLoc ? getLocaleDirection(locale) : "ltr";
 
   return (
-    <html lang={isValidLoc ? locale : "en"} dir={direction} suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
-        suppressHydrationWarning
-      >
-        <Navbar locale={isValidLoc ? locale : "en"} />
-        {children}
-        <Footer locale={isValidLoc ? locale : "en"} />
-      </body>
-    </html>
+    <>
+      <Navbar locale={isValidLoc ? locale : "en"} />
+      {children}
+      <Footer locale={isValidLoc ? locale : "en"} />
+    </>
   );
 }

@@ -4,9 +4,10 @@ export const translations = {
     contactUs: "Contact us",
     whoAreWe: "Who are we?",
     ourServices: "Our services",
+    pricing: "Pricing",
     home: "Home",
     getConsultation: "GET A CONSULTATION",
-    gulfStar: "Gulf Star for Accounting",
+    gulfStar: "Almahy Legal Service",
     
     // Hero Banner
     heroTitle: "We handle your accounting, so you can focus on running your business.",
@@ -32,8 +33,8 @@ export const translations = {
     servicesCTADesc: "Let us handle the numbers while you focus on growing your business.",
     
     // About Page
-    aboutTitle: "Gulf Star for Accounting",
-    aboutDesc1: "Gulf Star for Accounting is a leading provider of professional accounting and financial services in the United Arab Emirates. With years of experience and a dedicated team of certified accountants, we help businesses of all sizes manage their finances with precision and confidence.",
+    aboutTitle: "Almahy Legal Service",
+    aboutDesc1: "Almahy Legal Service is a leading provider of professional accounting and financial services in the United Arab Emirates. With years of experience and a dedicated team of certified accountants, we help businesses of all sizes manage their finances with precision and confidence.",
     aboutDesc2: "We understand the unique challenges facing businesses in the UAE market. Our comprehensive range of services is designed to ensure compliance, optimize financial performance, and provide the insights you need to make informed decisions.",
     missionTitle: "Our Mission",
     missionDesc: "To provide exceptional accounting services that empower businesses to achieve financial clarity, compliance, and sustainable growth.",
@@ -69,7 +70,7 @@ export const translations = {
     hoursWeekend: "Friday - Saturday: Closed",
     
     // Footer
-    footerText: "© 2024 Gulf Star for Accounting. All rights reserved.",
+    footerText: "© 2026 Almahy Legal Services. All rights reserved.",
     footerOurAddress: "Our Address",
     footerConnectWithUs: "Connect with Us",
     footerNewsletter: "Our Newsletter",
@@ -83,6 +84,7 @@ export const translations = {
     contactUs: "اتصل بنا",
     whoAreWe: "من نحن؟",
     ourServices: "خدماتنا",
+    pricing: "الأسعار",
     home: "الرئيسية",
     getConsultation: "احصل على استشارة",
     gulfStar: "جلف ستار للمحاسبة",

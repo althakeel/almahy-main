@@ -118,8 +118,8 @@ export default function Footer({ locale }: { locale: string }) {
         <div className="flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <p>{t.footerText}</p>
           <div className="flex gap-4 text-white/70 items-center">
-            <Link href="/privacy" className="hover:text-[#d4a574]">{t.footerPrivacy}</Link>
-            <Link href="/terms" className="hover:text-[#d4a574]">{t.footerTerms}</Link>
+            <Link href={`/${lang}/privacy`} className="hover:text-[#d4a574]">{t.footerPrivacy}</Link>
+            <Link href={`/${lang}/terms`} className="hover:text-[#d4a574]">{t.footerTerms}</Link>
             <div className="flex items-center gap-2 border-l border-white/20 pl-4">
               <button
                 onClick={() => switchLanguage('en')}

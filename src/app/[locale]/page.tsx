@@ -2,6 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { translations, Locale } from "@/lib/translations";
 import CTA from "@/components/CTA";
+import FAQ from "@/components/FAQ";
+import ServicesSection from "@/components/ServicesSection";
+import GoogleReviews from "@/components/GoogleReviews";
+import Stats from "@/components/Stats";
+import ClientLogosMarquee from "@/components/ClientLogosMarquee";
 
 export default async function Home({
   params,
@@ -37,9 +42,9 @@ export default async function Home({
             {/* Golden divider line */}
             <div className="flex justify-center mb-8">
               <div className="flex items-center gap-3">
-                <div className="h-1 w-8 bg-yellow-400"></div>
-                <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                <div className="h-1 w-8 bg-yellow-400"></div>
+                <div className="h-1 w-8" style={{backgroundColor: '#F8E48B'}}></div>
+                <div className="w-2 h-2 rounded-full" style={{backgroundColor: '#F8E48B'}}></div>
+                <div className="h-1 w-8" style={{backgroundColor: '#F8E48B'}}></div>
               </div>
             </div>
 
@@ -61,7 +66,8 @@ export default async function Home({
                 href="https://wa.me/97142648831?text=Hello%2C%20I%20would%20like%20to%20book%20a%20free%20consultation"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-3 px-8 rounded transition-colors"
+                className="text-gray-900 font-semibold py-3 px-8 rounded transition-colors"
+                style={{backgroundColor: '#F8E48B'}}
               >
                 {t.bookConsultation}
               </Link>
@@ -69,6 +75,21 @@ export default async function Home({
           </div>
         </div>
       </section>
+
+      {/* Client Logos Marquee */}
+      <ClientLogosMarquee locale={lang} />
+
+      {/* Services Section */}
+      <ServicesSection locale={lang} />
+
+      {/* Stats Section */}
+      <Stats locale={lang} />
+
+      {/* Google Reviews Section */}
+      <GoogleReviews locale={lang} />
+
+      {/* FAQ Section */}
+      <FAQ locale={lang} />
 
       {/* CTA Section */}
       <CTA locale={lang} />
