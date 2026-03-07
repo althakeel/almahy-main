@@ -62,38 +62,8 @@ const faqData: Record<Locale, FAQItem[]> = {
       question: "Do you help organize old or overdue files?",
       answer: "Yes, we can help organize and reconcile historical records to bring your accounts up to date."
     },
-    {
-      question: "How long does it take to prepare financial statements or tax returns?",
-      answer: "Typically 5-10 business days depending on the complexity and volume of transactions."
-    },
-    {
-      question: "What is the estimated time to complete Corporate Tax registration?",
-      answer: "Corporate Tax registration usually takes 3-7 business days once all required documents are submitted."
-    },
-    {
-      question: "Do you provide monthly or quarterly reports?",
-      answer: "We provide both monthly and quarterly reports based on your preference and business requirements."
-    },
-    {
-      question: "When do you start work after the contract is signed?",
-      answer: "We begin work immediately after contract signing and receipt of necessary documents and access."
-    },
-    {
-      question: "Do your services include preparing financial statements, or just filing tax returns?",
-      answer: "We provide comprehensive services including financial statement preparation, bookkeeping, and tax filing."
-    },
-    {
-      question: "Can you take over tasks from our current accountant or another accounting firm?",
-      answer: "Yes, we can seamlessly transition accounting tasks from your current provider with minimal disruption."
-    },
-    {
-      question: "What type of reports will we receive monthly?",
-      answer: "You'll receive profit & loss statements, balance sheets, cash flow reports, and tax compliance summaries."
-    },
-    {
-      question: "Do you also provide financial consulting or tax planning?",
-      answer: "Yes, we offer strategic financial consulting and tax planning to optimize your business operations."
-    }
+  
+  
   ],
   ar: [
     {
@@ -140,42 +110,8 @@ const faqData: Record<Locale, FAQItem[]> = {
       question: "هل تقبلون البيانات إلكترونياً؟ وما الأنظمة التي تعملون معها؟",
       answer: "نعم، نقبل البيانات الإلكترونية ونعمل مع أنظمة محاسبية متنوعة."
     },
-    {
-      question: "هل تساعدون في تنظيم الملفات القديمة أو المتأخرة؟",
-      answer: "نعم، يمكننا المساعدة في تنظيم ومطابقة السجلات التاريخية."
-    },
-    {
-      question: "كم من الوقت يستغرق إعداد القوائم المالية أو الإقرارات الضريبية؟",
-      answer: "عادةً من 5-10 أيام عمل حسب التعقيد وحجم المعاملات."
-    },
-    {
-      question: "ما هو الوقت المقدر لإكمال تسجيل الضريبة على الشركات؟",
-      answer: "عادةً يستغرق التسجيل من 3-7 أيام عمل بعد تقديم المستندات المطلوبة."
-    },
-    {
-      question: "هل تقدمون تقارير شهرية أو ربع سنوية؟",
-      answer: "نقدم تقارير شهرية وربع سنوية حسب تفضيلاتك ومتطلبات عملك."
-    },
-    {
-      question: "متى تبدأون العمل بعد توقيع العقد؟",
-      answer: "نبدأ العمل فوراً بعد توقيع العقد واستلام المستندات الضرورية."
-    },
-    {
-      question: "هل تشمل خدماتكم إعداد القوائم المالية أم فقط تقديم الإقرارات؟",
-      answer: "نقدم خدمات شاملة تشمل إعداد القوائم المالية والمحاسبة والتقديم الضريبي."
-    },
-    {
-      question: "هل يمكنكم استلام المهام من محاسبنا الحالي أو شركة محاسبة أخرى؟",
-      answer: "نعم، يمكننا الانتقال السلس من مزودك الحالي مع الحد الأدنى من الاضطراب."
-    },
-    {
-      question: "ما نوع التقارير التي سنتلقاها شهرياً؟",
-      answer: "ستتلقى قوائم الأرباح والخسائر والميزانية وتقارير التدفق النقدي وملخصات الامتثال الضريبي."
-    },
-    {
-      question: "هل تقدمون أيضاً استشارات مالية أو تخطيط ضريبي؟",
-      answer: "نعم، نقدم استشارات مالية استراتيجية وتخطيط ضريبي لتحسين عمليات عملك."
-    }
+ 
+   
   ]
 };
 
@@ -188,49 +124,45 @@ export default function FAQ({ locale }: FAQProps) {
   };
 
   return (
-    <section className="w-full bg-white py-16 px-4 md:px-8">
-      <div className="max-w-[1250px] mx-auto">
+    <section className="w-full bg-gradient-to-br from-yellow-50 via-white to-yellow-100 py-20 px-4 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
         {/* Title */}
-        <h2 className="text-4xl md:text-5xl font-bold text-amber-500 mb-4">
-          FAQ
-        </h2>
-
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 tracking-tight">FAQ</h2>
         {/* Subtitle */}
-        <p className="text-gray-600 text-sm md:text-base mb-10 leading-relaxed max-w-3xl">
+        <p className="text-gray-600 text-base md:text-lg mb-12 leading-relaxed max-w-3xl text-left">
           {locale === 'en' 
             ? "Have questions about our accounting and tax services? We've got you covered. Below you'll find answers to common inquiries regarding our pricing, tax compliance, required documents, service timelines, and more. If you don't find what you're looking for, feel free to contact us directly!"
             : "هل لديك أسئلة حول خدمات المحاسبة والضرائب؟ نحن هنا لمساعدتك. ستجد أدناه إجابات للاستفسارات الشائعة حول الأسعار والامتثال الضريبي والمستندات المطلوبة والجداول الزمنية والمزيد. إذا لم تجد ما تبحث عنه، لا تتردد في الاتصال بنا مباشرة!"
           }
         </p>
-
         {/* FAQ Items */}
-        <div className="space-y-0">
+        <div className="grid grid-cols-1 gap-7">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border-b border-gray-200 last:border-b-0"
+              className="rounded-2xl bg-white shadow-lg border border-yellow-100 transition-all duration-300 overflow-hidden px-0 md:px-2"
             >
               {/* Question */}
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between py-5 text-left hover:bg-gray-50 transition-colors"
+                className="w-full flex items-center justify-between px-8 py-7 text-left group focus:outline-none focus:ring-2 focus:ring-yellow-400"
               >
-                <span className="font-semibold text-gray-800 text-sm md:text-base pr-4">
+                <span className="font-bold text-gray-900 text-lg md:text-xl pr-4 group-hover:text-yellow-700 transition-colors">
                   {faq.question}
                 </span>
-                <span className="text-amber-500 text-2xl font-light flex-shrink-0">
+                <span className={`text-yellow-500 text-3xl font-bold flex-shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-45' : ''}`}>
                   {openIndex === index ? '−' : '+'}
                 </span>
               </button>
-
               {/* Answer */}
-              {openIndex === index && (
-                <div className="pb-5 animate-fadeIn">
-                  <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </div>
-              )}
+              <div
+                className={`px-8 pb-7 transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}
+                style={{overflow: 'hidden'}}
+              >
+                <p className="text-gray-700 text-base leading-relaxed">
+                  {faq.answer}
+                </p>
+              </div>
             </div>
           ))}
         </div>

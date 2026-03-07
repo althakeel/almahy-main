@@ -67,16 +67,24 @@ function StatCard({ number, label, suffix = '' }: StatProps) {
   };
 
   return (
-    <div ref={cardRef} className="relative group">
-      {/* Hover Effect Background */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300\" style={{background: 'linear-gradient(to bottom right, rgba(248, 228, 139, 0.1), rgba(191, 156, 74, 0.05))'}}></div>
-      
+    <div
+      ref={cardRef}
+      className="relative group transition-transform duration-300 hover:scale-105"
+      style={{ minHeight: '200px' }}
+    >
+      {/* Card Background & Shadow */}
+      <div className="absolute inset-0 rounded-xl bg-white/90 shadow-lg group-hover:shadow-2xl transition-all duration-300 border border-gray-200" />
+      {/* Accent Bar on Hover */}
+      <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-yellow-400 to-yellow-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-l-xl" />
       {/* Content */}
-      <div className="relative text-center py-16 px-8">
-        <div className="text-5xl md:text-6xl lg:text-7xl font-light mb-6 tracking-tight" style={{ fontFamily: 'Georgia, serif', color: '#F8E48B' }}>
+      <div className="relative text-center py-14 px-6 flex flex-col items-center justify-center h-full">
+        <div
+          className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 tracking-tight drop-shadow"
+          style={{ fontFamily: 'Georgia, serif', color: '#C9A227', textShadow: '0 2px 8px rgba(201,162,39,0.10)' }}
+        >
           {displayValue()}
         </div>
-        <p className="text-xs md:text-sm font-bold uppercase tracking-[0.15em] leading-relaxed max-w-[200px] mx-auto" style={{color: '#181818'}}>
+        <p className="text-sm md:text-base font-semibold uppercase tracking-[0.12em] leading-relaxed max-w-[220px] mx-auto text-gray-800">
           {label}
         </p>
       </div>
@@ -151,43 +159,33 @@ export default function Stats({ locale }: { locale: Locale }) {
   const pageContent = content[locale];
 
   return (
-    <section className="w-full py-24 px-4 md:px-8" style={{backgroundColor: '#f5f0e8'}}>
-      <div className="max-w-[1400px] mx-auto">
+    <section className="w-full py-24 px-4 md:px-8 bg-gradient-to-br from-yellow-50 via-white to-yellow-100">
+      <div className="max-w-[1200px] mx-auto">
         {/* Header */}
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-3 mb-8">
-            <div className="h-[2px] w-12" style={{backgroundColor: '#F8E48B'}}></div>
-            <span className="text-xs uppercase tracking-[0.25em] font-semibold" style={{color: '#F8E48B'}}>
+            <div className="h-[2px] w-12 bg-yellow-400" />
+            <span className="text-xs uppercase tracking-[0.25em] font-semibold text-yellow-600">
               {pageContent.badge}
             </span>
-            <div className="h-[2px] w-12" style={{backgroundColor: '#F8E48B'}}></div>
+            <div className="h-[2px] w-12 bg-yellow-400" />
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8 font-light tracking-tight" style={{ fontFamily: 'Georgia, serif', color: '#181818' }}>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8 font-bold tracking-tight text-gray-900" style={{ fontFamily: 'Georgia, serif' }}>
             {pageContent.title}
           </h2>
           <div className="flex justify-center">
-            <div className="h-[3px] w-24 rounded-full" style={{backgroundImage: 'linear-gradient(to right, transparent, #F8E48B, transparent)'}}></div>
+            <div className="h-[3px] w-24 rounded-full bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
           </div>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-sm overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.08)]" style={{backgroundColor: 'rgba(255, 255, 255, 0.6)', borderColor: 'rgba(248, 228, 139, 0.2)', borderWidth: '1px', backdropFilter: 'blur(4px)'}}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {pageContent.stats.map((stat, index) => (
-            <div 
+            <StatCard
               key={index}
-              className={`
-                ${index % 3 !== 2 ? 'lg:border-r' : ''} 
-                ${index < 3 ? 'lg:border-b' : ''}
-                ${index % 2 === 0 ? 'md:border-r' : ''} 
-                ${index < 4 ? 'md:border-b' : ''}
-              `}
-              style={{borderColor: 'rgba(248, 228, 139, 0.2)'}}
-            >
-              <StatCard
-                number={stat.number}
-                label={stat.label}
-              />
-            </div>
+              number={stat.number}
+              label={stat.label}
+            />
           ))}
         </div>
       </div>

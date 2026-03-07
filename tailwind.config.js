@@ -16,6 +16,15 @@ export default {
           'dark': '#181818',
         }
       },
+      keyframes: {
+        fadein: {
+          '0%': { opacity: '0', transform: 'translateY(40px)' },
+          '100%': { opacity: '1', transform: 'none' },
+        },
+      },
+      animation: {
+        fadein: 'fadein 1.2s cubic-bezier(0.22, 1, 0.36, 1) both',
+      },
     },
   },
   plugins: [],
