@@ -10,7 +10,7 @@ export const translations = {
     gulfStar: "Almahy Legal Service",
     
     // Hero Banner
-    heroTitle: "We handle your accounting, so you can focus on running your business.",
+    heroTitle: "We handle your accounting. You run your business.",
     heroDescription: "From filing tax returns to monthly reports, we handle the financial aspects of your business. We work with companies in the UAE and ensure everything is done accurately and on time.",
     contactButton: "Contact Us ☎",
     bookConsultation: "Book Your Free Consultation 📱",

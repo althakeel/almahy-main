@@ -43,7 +43,6 @@ export default function Navbar({ locale }: NavbarProps) {
         setIsVisible(false);
         setMobileMenuOpen(false);
       } else {
-        // Scrolling up
         setIsVisible(true);
       }
       
@@ -55,16 +54,26 @@ export default function Navbar({ locale }: NavbarProps) {
   }, [lastScrollY]);
 
   return (
-    <nav className={`fixed top-0 z-50 flex justify-center w-full transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-      <div className={`${isTurkiyePage ? 'bg-gray-900' : isEnServicesPage ? 'bg-gray-900/55' : isScrolled ? 'bg-gray-900/25' : 'bg-transparent'} backdrop-blur-3xl shadow-lg text-white w-full max-w-[1250px] px-4 md:px-8 transition-all duration-300`} style={{borderRadius: '0 0 15px 15px'}}>
-        <div className="flex items-center justify-between py-2 md:py-2.5">
-          {/* Left: Logo and Company Name */}
+    <nav className={`fixed top-0 z-50 flex justify-center w-full transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+      <div
+        className={`
+          w-full max-w-[1250px] px-4 md:px-8 transition-all duration-300
+          border border-white/20
+          shadow-xl text-white
+          rounded-b-[18px]
+          ${isTurkiyePage ? 'bg-gray-900/70' : isEnServicesPage ? 'bg-gray-900/50' : isScrolled ? 'bg-white/20' : 'bg-white/10'}
+          backdrop-blur-lg
+        `}
+        style={{ WebkitBackdropFilter: 'blur(16px) saturate(140%)', backdropFilter: 'blur(16px) saturate(140%)' }}
+      >
+        <div className={`flex items-center justify-between py-2 md:py-2.5 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+          {/* Logo always on the left */}
           <Link href={`/${lang}`} className="flex items-center gap-2 md:gap-3 cursor-pointer">
             <Image src={Logo} alt="Gulf Star Logo" width={150} height={100} className="object-contain md:w-[150px] md:h-[55px]" priority />
           </Link>
 
           {/* Center: Navigation Links */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-10">
+          <div className={`hidden md:flex items-center gap-6 lg:gap-10 ${lang === 'ar' ? 'justify-end' : 'justify-start'}`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
             <Link href={`/${lang}`} className="text-sm font-medium text-white transition-colors whitespace-nowrap" style={{color: 'white'}} onMouseEnter={(e) => e.currentTarget.style.color = '#F8E48B'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'}>
               {t.home}
             </Link>
