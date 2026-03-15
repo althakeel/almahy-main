@@ -13,7 +13,7 @@ export const translations = {
     heroTitle: "We handle your accounting. You run your business.",
     heroDescription: "From filing tax returns to monthly reports, we handle the financial aspects of your business. We work with companies in the UAE and ensure everything is done accurately and on time.",
     contactButton: "Contact Us ☎",
-    bookConsultation: "Book Your Free Consultation 📱",
+    bookConsultation: "Book Your Free Consultation",
     
     // Services Page
     servicesIntro: "We provide comprehensive accounting and financial services tailored to your business needs in the UAE.",
@@ -93,7 +93,7 @@ export const translations = {
     heroTitle: "نحن نتولى محاسبتك، حتى تتمكن من التركيز على إدارة عملك.",
     heroDescription: "من تقديم إقرارات الضرائب إلى التقارير الشهرية، نتولى الجوانب المالية لعملك. نعمل مع الشركات في الإمارات ونتأكد من القيام بكل شيء بدقة وفي الوقت المناسب.",
     contactButton: "اتصل بنا ☎",
-    bookConsultation: "احجز استشارتك المجانية 📱",
+    bookConsultation: "احجز استشارتك المجانية",
     
     // Services Page
     servicesIntro: "نقدم خدمات محاسبية ومالية شاملة مصممة خصيصاً لتلبية احتياجات عملك في الإمارات العربية المتحدة.",

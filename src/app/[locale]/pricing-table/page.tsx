@@ -1,7 +1,8 @@
 
 import Link from "next/link";
+import { Locale } from "@/lib/translations";
 
-export default async function PricingTablePage({
+export default async function Page({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -57,7 +58,7 @@ export default async function PricingTablePage({
             "Customized Plan"
           ],
           buttonText: "GET STARTED"
-        }
+        },
       ],
       corporateTitle: "Corporate Packages",
       corporatePackages: [
@@ -103,7 +104,7 @@ export default async function PricingTablePage({
             "Bank account opening + more"
           ],
           buttonText: "GET STARTED"
-        }
+        },
       ],
       debtTitle: "Debit Collection Packages",
       debtPackages: [
@@ -194,7 +195,7 @@ export default async function PricingTablePage({
             "خطة مخصصة"
           ],
           buttonText: "ابدأ الآن"
-        }
+        },
       ],
       corporateTitle: "الباقات المؤسسية",
       corporatePackages: [
@@ -240,7 +241,7 @@ export default async function PricingTablePage({
             "فتح حساب بنكي + المزيد"
           ],
           buttonText: "ابدأ الآن"
-        }
+        },
       ],
       debtTitle: "باقات تحصيل الديون",
       debtPackages: [
@@ -381,176 +382,6 @@ export default async function PricingTablePage({
     </div>
   );
 
-  // ...rest of the page rendering code...
-      corporatePackages: [
-        {
-          name: "الخطة الأساسية",
-          icon: "⏰",
-          price: "4K",
-          period: "/شهرياً",
-          currency: "درهم",
-          features: [
-            "تسجيل الترخيص",
-            "خدمات الهجرة",
-            "استشارات ضريبية",
-            "أخرى"
-          ],
-          buttonText: "ابدأ الآن"
-        },
-        {
-          name: "الخطة المميزة",
-          icon: "⏱️",
-          price: "6K",
-          period: "/شهرياً",
-          currency: "درهم",
-          features: [
-            "الخطة الأساسية",
-            "تقديم الضرائب",
-            "تسجيل ضريبة القيمة المضافة",
-            "تسجيل العلامة التجارية"
-          ],
-          buttonText: "ابدأ الآن",
-          featured: true
-        },
-        {
-          name: "خطة الماس",
-          icon: "💎",
-          price: "10K",
-          period: "/شهرياً",
-          currency: "درهم",
-          features: [
-            "المحاسبة",
-            "الخدمات الجماعية",
-            "خدمات التصحيح",
-            "فتح حساب بنكي + المزيد"
-          ],
-          buttonText: "ابدأ الآن"
-        }
-      ],
-      ],
-      debtTitle: "باقات تحصيل الديون",
-      debtPackages: [
-        {
-          name: "الخطة الذهبية",
-          icon: "🗄️",
-          price: "5K",
-          period: "/شهرياً",
-          currency: "درهم",
-          features: [
-            "جمع معلومات المدينين",
-            "جولة التحصيل",
-            "الخطة القانونية"
-          ],
-          buttonText: "ابدأ الآن"
-        },
-        {
-          name: "خطة VIP",
-          icon: "🔑",
-          price: "10K",
-          period: "/شهرياً",
-          currency: "درهم",
-          features: [
-            "الخطة الذهبية",
-            "إشعار قانوني مخصص",
-            "المطالبات"
-          ],
-          buttonText: "ابدأ الآن",
-          featured: true
-        },
-        {
-          name: "خطة الماس",
-          icon: "💎",
-          price: "15K",
-          period: "/شهرياً",
-          currency: "درهم",
-          features: [
-            "خطة الباحث والملف",
-            "تنفيذ المقدمة",
-            "سياسات كل شركة"
-          ],
-          buttonText: "ابدأ الآن"
-        }
-      ]
-    }
-  };
-
-  const pageContent = content[lang];
-
-  const PricingCard = ({ 
-    name, 
-    icon, 
-    price, 
-    period, 
-    currency, 
-    features, 
-    buttonText, 
-    featured = false 
-  }: {
-    name: string;
-    icon: string;
-    price: string;
-    period: string;
-    currency: string;
-    features: string[];
-    buttonText: string;
-    featured?: boolean;
-  }) => (
-    <div className={`
-      bg-white rounded-lg p-8 shadow-lg hover:shadow-2xl transition-all duration-300
-      ${featured ? 'scale-105 relative' : 'hover:scale-105'}
-    `}
-    style={{border: featured ? '2px solid #F8E48B' : 'none'}}>
-      {featured && (
-        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 text-white px-6 py-1 rounded-full text-xs font-bold uppercase" style={{backgroundColor: '#F8E48B', color: '#181818'}}>
-          Popular
-        </div>
-      )}
-      
-      {/* Icon */}
-      <div className="text-5xl mb-4 text-center">{icon}</div>
-      
-      {/* Plan Name */}
-      <h3 className="text-xl font-bold text-gray-900 text-center mb-6">{name}</h3>
-      
-      {/* Price */}
-      <div className="text-center mb-8">
-        <div className="flex items-baseline justify-center gap-2">
-          <span className="text-sm text-gray-600">{currency}</span>
-          <span className="text-5xl font-bold text-gray-900">{price}</span>
-          <span className="text-sm text-gray-600">{period}</span>
-        </div>
-      </div>
-      
-      {/* Features */}
-      <ul className="space-y-4 mb-8 min-h-[180px]">
-        {features.map((feature, index) => (
-          <li key={index} className="flex items-start gap-3">
-            <svg className="w-5 h-5 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" style={{color: '#F8E48B'}}>
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
-            <span className="text-sm text-gray-700">{feature}</span>
-          </li>
-        ))}
-      </ul>
-      
-      {/* Button */}
-      <Link
-        href={`https://wa.me/97142648831?text=Hello, I would like to know more about the ${name}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block w-full text-center py-3 rounded-md font-semibold text-sm uppercase tracking-wide transition-all"
-        style={featured ? {
-          backgroundColor: '#F8E48B',
-          color: '#181818'
-        } : {
-          border: '2px solid #F8E48B',
-          color: '#F8E48B'
-        }}
-      >
-        {buttonText}
-      </Link>
-    </div>
-  );
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">

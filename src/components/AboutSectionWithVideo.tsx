@@ -1,7 +1,12 @@
 "use client";
 import { useState, useRef } from "react";
 
-export default function AboutSectionWithVideo() {
+interface AboutSectionWithVideoProps {
+  t: any;
+  isRTL: boolean;
+}
+
+export default function AboutSectionWithVideo({ t, isRTL }: AboutSectionWithVideoProps) {
   const [showVideo, setShowVideo] = useState(false);
   const videoRef = useRef(null);
   return (
@@ -42,10 +47,10 @@ export default function AboutSectionWithVideo() {
               </span>
             </button>
           </div>
-          <blockquote className="text-[#b49a87] italic text-base max-w-xs text-center flex flex-col items-center gap-2 font-serif">
+          <blockquote className="text-[#b49a87] italic text-base max-w-xs text-center flex flex-col items-center gap-2 font-serif" style={{ direction: isRTL ? 'rtl' : 'ltr', textAlign: isRTL ? 'right' : 'center' }}>
             <svg className="w-7 h-7 mx-auto" fill="none" stroke="#b49a87" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 17V7a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4h-2a4 4 0 0 1-4-4z"/></svg>
             <span>
-              Al Mahy Legal Consultancy provided exceptional support and expertise, guiding us through complex legal matters with professionalism and efficiency. Their dedication and knowledge were invaluable to our success. Highly recommended!
+              {t.aboutTestimonial}
             </span>
           </blockquote>
         </div>
@@ -54,22 +59,15 @@ export default function AboutSectionWithVideo() {
           {/* About Us image and label */}
           <div className="flex items-center gap-4 mb-2">
             <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=400&q=80" alt="Legal Team" className="w-24 h-16 object-cover rounded-xl shadow" />
-            <span className="text-xs font-semibold tracking-widest text-[#b49a87] uppercase">About Us</span>
+            <span className="text-xs font-semibold tracking-widest text-[#b49a87] uppercase">{t.aboutUsLabel || 'About Us'}</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-serif font-normal text-[#222] mb-2 leading-tight">We’re Advocates for<br/>Justice and Right</h2>
+          <h2 className="text-4xl md:text-5xl font-serif font-normal text-[#222] mb-2 leading-tight" style={{ direction: isRTL ? 'rtl' : 'ltr', textAlign: isRTL ? 'right' : 'left' }}>{t.aboutHeadline}</h2>
           <hr className="w-20 border-t-2 border-[#b49a87] mb-4" />
-          <p className="text-gray-700 text-lg leading-relaxed mb-2 max-w-2xl font-serif">
-            AlMahy Legal Services is a premier law firm with over 38 years of legal experience and a global network of 5000 qualified lawyers, making us a trusted name in the legal services industry worldwide. Based in the United Arab Emirates, we have established ourselves as a leading force in the legal sector, providing a diverse range of high-quality legal services to our esteemed clients.
+          <p className="text-gray-700 text-lg leading-relaxed mb-2 max-w-2xl font-serif" style={{ direction: isRTL ? 'rtl' : 'ltr', textAlign: isRTL ? 'right' : 'left' }}>
+            {t.aboutDescription}
           </p>
           {/* Call to action card, floating at the bottom right */}
-          <div className="bg-white rounded-2xl shadow-xl border border-gray-200 px-10 py-8 flex flex-col gap-3 max-w-md absolute bottom-8 right-8 z-10">
-            <span className="text-xs font-semibold tracking-widest text-[#b49a87] uppercase mb-1">Ask a Lawyer</span>
-            <h3 className="text-2xl font-serif font-normal text-[#222] mb-2">We Provide Solid<br/>Law Practice</h3>
-            <div className="flex gap-3 mt-2">
-              <a href="#call" className="inline-flex items-center justify-center px-7 py-3 bg-[#19202c] text-white font-semibold rounded-full shadow hover:bg-[#222] transition">Call Us</a>
-              <a href="tel:+971504096028" className="inline-flex items-center justify-center px-7 py-3 bg-[#b49a87] text-white font-semibold rounded-full shadow hover:bg-[#a0886b] transition">+971 504096028</a>
-            </div>
-          </div>
+       
         </div>
       </div>
     </section>

@@ -79,12 +79,12 @@ function StatCard({ number, label, suffix = '' }: StatProps) {
       {/* Content */}
       <div className="relative text-center py-14 px-6 flex flex-col items-center justify-center h-full">
         <div
-          className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 tracking-tight drop-shadow"
+          className="text-2xl md:text-5xl lg:text-7xl font-extrabold mb-4 tracking-tight drop-shadow"
           style={{ fontFamily: 'Georgia, serif', color: '#C9A227', textShadow: '0 2px 8px rgba(201,162,39,0.10)' }}
         >
           {displayValue()}
         </div>
-        <p className="text-sm md:text-base font-semibold uppercase tracking-[0.12em] leading-relaxed max-w-[220px] mx-auto text-gray-800">
+        <p className="text-xs md:text-base font-semibold uppercase tracking-[0.12em] leading-relaxed max-w-[220px] mx-auto text-gray-800">
           {label}
         </p>
       </div>
@@ -179,7 +179,7 @@ export default function Stats({ locale }: { locale: Locale }) {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {pageContent.stats.map((stat, index) => (
             <StatCard
               key={index}

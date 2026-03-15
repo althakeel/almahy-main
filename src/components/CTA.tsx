@@ -72,13 +72,13 @@ export default function CTA({ locale = 'en' }: CTAProps) {
 
               {/* Phone Number */}
               <Link
-                href="https://wa.me/97142648831?text=Hello%2C%20I%20would%20like%20to%20get%20accounting%20services"
+                href="https://wa.me/971542185535?text=Hello%2C%20I%20would%20like%20to%20get%20accounting%20services"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-center mb-4 hover:opacity-90 transition-opacity"
               >
                 <span className="text-3xl md:text-4xl font-bold text-white block tracking-tight">
-                  +971 4264 8831
+                  +971 5421 85535
                 </span>
               </Link>
 

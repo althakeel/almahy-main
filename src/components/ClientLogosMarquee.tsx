@@ -79,32 +79,47 @@ export default function ClientLogosMarquee({ locale }: ClientLogosMarqueeProps) 
         <div className="group relative mt-10 overflow-hidden">
           <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent" />
-
-          <ul
-            className={`flex min-w-max gap-4 ${topRowAnimation} group-hover:[animation-play-state:paused]`}
-            style={{ animationDuration: "300s" }}
-          >
-            {[...clientLogos, ...clientLogos].map((logo, index) => (
-              <LogoPill
-                key={`top-${logo}-${index}`}
-                src={`/assets/logos/${logo}`}
-                alt={logo.replace(/[-_]/g, ' ').replace(/\.[^.]+$/, '')}
-              />
-            ))}
-          </ul>
-
-          <ul
-            className={`mt-4 flex min-w-max gap-4 ${bottomRowAnimation} group-hover:[animation-play-state:paused]`}
-            style={{ animationDuration: "300s" }}
-          >
-            {[...clientLogos, ...clientLogos].map((logo, index) => (
-              <LogoPill
-                key={`bottom-${logo}-${index}`}
-                src={`/assets/logos/${logo}`}
-                alt={logo.replace(/[-_]/g, ' ').replace(/\.[^.]+$/, '')}
-              />
-            ))}
-          </ul>
+          {isArabic ? (
+            <ul
+              className={`flex min-w-max gap-4 ${topRowAnimation} group-hover:[animation-play-state:paused]`}
+              style={{ animationDuration: "300s" }}
+            >
+              {[...clientLogos, ...clientLogos].map((logo, index) => (
+                <LogoPill
+                  key={`ar-${logo}-${index}`}
+                  src={`/assets/logos/${logo}`}
+                  alt={logo.replace(/[-_]/g, ' ').replace(/\.[^.]+$/, '')}
+                />
+              ))}
+            </ul>
+          ) : (
+            <>
+              <ul
+                className={`flex min-w-max gap-4 ${topRowAnimation} group-hover:[animation-play-state:paused]`}
+                style={{ animationDuration: "300s" }}
+              >
+                {[...clientLogos, ...clientLogos].map((logo, index) => (
+                  <LogoPill
+                    key={`top-${logo}-${index}`}
+                    src={`/assets/logos/${logo}`}
+                    alt={logo.replace(/[-_]/g, ' ').replace(/\.[^.]+$/, '')}
+                  />
+                ))}
+              </ul>
+              <ul
+                className={`mt-4 flex min-w-max gap-4 ${bottomRowAnimation} group-hover:[animation-play-state:paused]`}
+                style={{ animationDuration: "300s" }}
+              >
+                {[...clientLogos, ...clientLogos].map((logo, index) => (
+                  <LogoPill
+                    key={`bottom-${logo}-${index}`}
+                    src={`/assets/logos/${logo}`}
+                    alt={logo.replace(/[-_]/g, ' ').replace(/\.[^.]+$/, '')}
+                  />
+                ))}
+              </ul>
+            </>
+          )}
         </div>
       </div>
     </section>
