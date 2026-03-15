@@ -204,6 +204,56 @@ export default async function AboutPage({
         </div>
       </div>
 
+      {/* Our Team Section */}
+      <div className="py-20 px-4 md:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              {lang === 'en' ? 'Our Team' : 'فريقنا'}
+            </h2>
+            <div className="flex justify-center">
+              <div className="h-1 w-24 rounded" style={{backgroundColor: '#F8E48B'}}></div>
+            </div>
+            <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
+              {lang === 'en' ? 'Meet our dedicated staff who drive our success.' : 'تعرف على فريق العمل المتميز لدينا.'}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {/* Example staff - replace with your real data and images */}
+            {[
+              {
+                name: 'Ahmed Al Thakeel',
+                position: lang === 'en' ? 'Managing Partner' : 'الشريك الإداري',
+                photo: '/assets/team/ahmed.jpg',
+              },
+              {
+                name: 'Sara Al Mansoori',
+                position: lang === 'en' ? 'Senior Lawyer' : 'محامية أولى',
+                photo: '/assets/team/sara.jpg',
+              },
+              {
+                name: 'Mohammed Al Farsi',
+                position: lang === 'en' ? 'Tax Consultant' : 'مستشار ضريبي',
+                photo: '/assets/team/mohammed.jpg',
+              },
+              {
+                name: 'Fatima Al Suwaidi',
+                position: lang === 'en' ? 'Legal Advisor' : 'مستشارة قانونية',
+                photo: '/assets/team/fatima.jpg',
+              },
+            ].map((member, idx) => (
+              <div key={idx} className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+                <div className="w-28 h-28 rounded-full overflow-hidden mb-4 border-4 border-[#F8E48B]">
+                  <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+                </div>
+                <h4 className="font-bold text-xl text-gray-900 mb-1">{member.name}</h4>
+                <p className="text-gray-500 text-base">{member.position}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* CTA Section */}
       <div className="py-16 px-4 md:px-8 bg-gradient-to-r from-gray-900 to-gray-800">
         <div className="max-w-4xl mx-auto text-center">

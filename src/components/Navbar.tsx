@@ -127,8 +127,8 @@ export default function Navbar({ locale }: NavbarProps) {
               onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F2D56D'}
               onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#F8E48B'}
             >
-              GET A CONSULTATION
               <span>👤</span>
+              {lang === 'en' ? 'GET A CONSULTATION' : 'احجز استشارة'}
             </Link>
 
             {/* Mobile Menu Button */}
@@ -231,7 +231,7 @@ export default function Navbar({ locale }: NavbarProps) {
                 </button>
               </div>
               <button className="w-full bg-amber-400 hover:bg-amber-500 text-gray-900 font-bold px-4 py-2 rounded text-sm transition-colors mt-2">
-                GET A CONSULTATION
+                {lang === 'en' ? 'GET A CONSULTATION' : 'احجز استشارة'}
               </button>
             </div>
           </div>
