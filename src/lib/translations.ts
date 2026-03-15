@@ -78,6 +78,11 @@ export const translations = {
     footerEmailPlaceholder: "Email Address",
     footerPrivacy: "Privacy",
     footerTerms: "Terms",
+    // About Section (for AboutSectionWithVideo)
+    aboutTestimonial: "Al Mahy helped us win our case!",
+    aboutUsLabel: "About Us",
+    aboutHeadline: "We’re Advocates for Justice and Right",
+    aboutDescription: "Al Mahy Legal Services is a premier law firm with over 38 years of legal experience and a global network of 5000 qualified lawyers, making us a trusted name in the legal services industry worldwide. Based in the United Arab Emirates, we have established ourselves as a leading force in the legal sector, providing a diverse range of high-quality legal services to our esteemed clients.",
   },
   ar: {
     // Navbar
@@ -158,6 +163,11 @@ export const translations = {
     footerEmailPlaceholder: "عنوان البريد الإلكتروني",
     footerPrivacy: "الخصوصية",
     footerTerms: "الشروط",
+    // About Section (for AboutSectionWithVideo)
+    aboutTestimonial: "ساعدتنا ماهي في الفوز بقضيتنا!",
+    aboutUsLabel: "من نحن",
+    aboutHeadline: "نحن دعاة للعدالة والحق",
+    aboutDescription: "الخدمات القانونية لماهي هي شركة محاماة رائدة بخبرة تزيد عن 38 عامًا وشبكة عالمية تضم 5000 محامٍ مؤهل، مما يجعلنا اسمًا موثوقًا في صناعة الخدمات القانونية عالميًا. مقرنا في الإمارات العربية المتحدة، وقد رسخنا أنفسنا كقوة رائدة في القطاع القانوني، مقدمين مجموعة متنوعة من الخدمات القانونية عالية الجودة لعملائنا الكرام.",
   },
 };
 

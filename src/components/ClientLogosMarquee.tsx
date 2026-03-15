@@ -1,13 +1,13 @@
+"use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import { Locale } from "@/lib/translations";
 
 interface ClientLogosMarqueeProps {
   locale: Locale;
 }
 
-
-// List of logo filenames in the logos folder
 const clientLogos = [
   "040031_4e4c054a279d43dbbb2e32def9e72924mv2-768x274.png",
   "1.png",
@@ -46,16 +46,18 @@ const clientLogos = [
   "white_logo_transparent_background-2048x1229-1-768x461.png",
 ];
 
-
 function LogoPill({ src, alt }: { src: string; alt: string }) {
+  const [imgSrc, setImgSrc] = useState(src);
+
   return (
-    <li className="flex h-16 min-w-[190px] items-center justify-center rounded-xl border border-gray-200 bg-white px-5 shadow-sm">
+    <li className="flex h-24 min-w-[220px] items-center justify-center rounded-xl border border-gray-200 bg-white px-6 shadow-sm">
       <Image
-        src={src}
+        src={imgSrc}
         alt={alt}
-        width={120}
-        height={48}
-        className="object-contain max-h-12 max-w-[120px]"
+        width={180}
+        height={70}
+        className="object-contain max-h-20 w-auto"
+        onError={() => setImgSrc("/assets/logos/fallback.png")}
       />
     </li>
   );
@@ -63,65 +65,59 @@ function LogoPill({ src, alt }: { src: string; alt: string }) {
 
 export default function ClientLogosMarquee({ locale }: ClientLogosMarqueeProps) {
   const isArabic = locale === "ar";
-  const topRowAnimation = isArabic ? "animate-marquee-right" : "animate-marquee-left";
-  const bottomRowAnimation = isArabic ? "animate-marquee-left" : "animate-marquee-right";
+
+  // duplicate logos for smooth infinite scroll
+  const logos = [...clientLogos, ...clientLogos];
 
   return (
     <section className="bg-white py-14 md:py-16">
       <div className="mx-auto max-w-6xl px-4 md:px-8">
+
+        {/* Heading */}
         <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
           {isArabic ? "عملاؤنا" : "Our Clients"}
         </p>
+
         <h2 className="mt-3 text-center text-2xl md:text-3xl font-bold text-gray-900">
           {isArabic ? "موثوقون من شركات رائدة" : "Trusted by leading companies"}
         </h2>
 
-        <div className="group relative mt-10 overflow-hidden">
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent" />
-          {isArabic ? (
-            <ul
-              className={`flex min-w-max gap-4 ${topRowAnimation} group-hover:[animation-play-state:paused]`}
-              style={{ animationDuration: "300s" }}
-            >
-              {[...clientLogos, ...clientLogos].map((logo, index) => (
-                <LogoPill
-                  key={`ar-${logo}-${index}`}
-                  src={`/assets/logos/${logo}`}
-                  alt={logo.replace(/[-_]/g, ' ').replace(/\.[^.]+$/, '')}
-                />
-              ))}
-            </ul>
-          ) : (
-            <>
-              <ul
-                className={`flex min-w-max gap-4 ${topRowAnimation} group-hover:[animation-play-state:paused]`}
-                style={{ animationDuration: "300s" }}
-              >
-                {[...clientLogos, ...clientLogos].map((logo, index) => (
-                  <LogoPill
-                    key={`top-${logo}-${index}`}
-                    src={`/assets/logos/${logo}`}
-                    alt={logo.replace(/[-_]/g, ' ').replace(/\.[^.]+$/, '')}
-                  />
-                ))}
-              </ul>
-              <ul
-                className={`mt-4 flex min-w-max gap-4 ${bottomRowAnimation} group-hover:[animation-play-state:paused]`}
-                style={{ animationDuration: "300s" }}
-              >
-                {[...clientLogos, ...clientLogos].map((logo, index) => (
-                  <LogoPill
-                    key={`bottom-${logo}-${index}`}
-                    src={`/assets/logos/${logo}`}
-                    alt={logo.replace(/[-_]/g, ' ').replace(/\.[^.]+$/, '')}
-                  />
-                ))}
-              </ul>
-            </>
-          )}
+        {/* Marquee */}
+        <div className="relative mt-10 overflow-hidden">
+
+          {/* gradient fade */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent z-10" />
+
+          <ul
+            className="flex min-w-max gap-4 mt-4"
+            style={{
+              animation: "marquee 40s linear infinite"
+            }}
+          >
+            {logos.map((logo, index) => (
+              <LogoPill
+                key={`${logo}-${index}`}
+                src={`/assets/logos/${logo}`}
+                alt={logo}
+              />
+            ))}
+          </ul>
+
         </div>
       </div>
+
+      {/* animation */}
+      <style>{`
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </section>
   );
 }
