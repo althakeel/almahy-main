@@ -118,7 +118,8 @@ export default function Home() {
       >
         <div className="absolute inset-0 bg-black/60"></div>
 
-        <div className="relative z-10 flex items-center px-6 md:px-20 w-full">
+        <div className="relative z-10 w-full">
+          <div className="max-w-7xl mx-auto flex items-center px-6 md:px-20 w-full">
 
           {/* Left Badge */}
 
@@ -152,7 +153,7 @@ export default function Home() {
 
           {/* Text */}
 
-          <div className="flex-1 flex flex-col justify-center items-start text-left max-w-7xl w-full md:ml-6 ml-0" style={{gap: '5px'}}>
+          <div className="flex-1 flex flex-col justify-center items-start text-left w-full md:ml-6 ml-0" style={{gap: '5px'}}>
 
             <span className={`uppercase text-[#bfa08a] text-xs font-semibold mb-2 tracking-widest${isRTL ? ' mb-4' : ''}`}>
               {isRTL ? "دَع المحكمة لنا" : "Leave Court To Us"}
@@ -183,6 +184,7 @@ export default function Home() {
 
           </div>
 
+          </div>
         </div>
       </section>
 
